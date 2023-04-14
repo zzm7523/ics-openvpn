@@ -1,0 +1,34 @@
+/*
+ * Copyright (c) 2012-2017 Arne Schwabe
+ * Distributed under the GNU GPL v2 with additional terms. For full terms see the file doc/LICENSE.txt
+ */
+
+plugins {
+    id('com.android.application')
+}
+
+android {
+    compileSdkVersion 29
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+    }
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+dependencies {
+    implementation 'com.android.support:appcompat-v7'
+    implementation 'com.madgag.spongycastle:bcpkix-jdk15on:1.58.0.0'
+}

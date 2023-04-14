@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright (c) 2012-2016 Arne Schwabe
+  ~ Distributed under the GNU GPL v2 with additional terms. For full terms see the file doc/LICENSE.txt
+  -->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <PreferenceCategory
+        android:key="app_behaviour"
+        android:title="@string/appbehaviour"
+        app:iconSpaceReserved="false" >
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="show_logactivity"
+            android:summary="@string/show_log_summary"
+            android:title="@string/show_log_activity"
+            app:iconSpaceReserved="false" />
+
+        <de.blinkt.openvpn.views.DefaultVPNListPreference
+            android:key="always_on_vpn"
+            android:title="@string/defaultvpn"
+            tools:summary="@string/defaultvpnsummary"
+            app:iconSpaceReserved="false" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="restart_vpn_onboot"
+            android:summary="@string/onbootrestartsummary"
+            android:title="@string/onbootrestart"
+            app:iconSpaceReserved="false" />
+
+        <Preference
+            android:key="clear_api"
+            android:persistent="false"
+            android:title="@string/clear_external_apps"
+            app:iconSpaceReserved="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/vpnbehaviour"
+        app:iconSpaceReserved="false" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="netchange_reconnect"
+            android:summary="@string/netchange_summary"
+            android:title="@string/netchange"
+            app:iconSpaceReserved="false" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="screenoff"
+            android:summary="@string/screenoff_summary"
+            android:title="@string/screenoff_title"
+            app:iconSpaceReserved="false" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

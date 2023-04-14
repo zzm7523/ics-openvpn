@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2012-2016 Arne Schwabe
+  ~ Distributed under the GNU GPL v2 with additional terms. For full terms see the file doc/LICENSE.txt
+  -->
+
+<resources>
+	<!--  Keep the order the same as the TYPE_ constants in VPNProfile -->
+    <string-array name="vpn_types">
+        <item>User/PW + PKCS12 </item>
+        <item>User/PW + Android</item>
+        <item>PKCS12 File</item>
+        <item>Android Certificate</item>
+        <item>Username/Password</item>
+    </string-array>
+    <string-array name="tls_directions_entries">
+        <item>Normal</item>
+        <item>Inverse</item>
+        <item>Bidirectional</item>
+    </string-array>
+    <string-array name="crm_entries">
+        <item>No reconnection retries</item>
+        <item>One reconnection retry</item>
+        <item>Five reconnection retries</item>
+        <item>Fifty reconnection retries</item>
+        <item>Unlimited reconnection retries</item>
+    </string-array>
+    <string-array name="tls_versions">
+        <item>AUTO negotiate</item>
+        <item>TLSv1.3</item>
+        <item>TLSv1.2</item>
+        <item>TLSv1.1</item>
+        <item>TLSv1</item>
+    </string-array>
+    <string-array name="cipher_entries">
+        <item>AUTO negotiate</item>
+        <item>AES-256-CBC</item>
+        <item>AES-192-CBC</item>
+        <item>AES-128-CBC</item>
+    </string-array>
+    <string-array name="auth_entries">
+        <item>AUTO negotiate</item>
+        <item>SHA256</item>
+        <item>SHA1</item>
+    </string-array>
+    <string-array name="log_source_entries">
+        <item>OpenVPN front</item>
+        <item>OpenVPN console</item>
+        <item>OpenVPN management</item>
+    </string-array>
+</resources>

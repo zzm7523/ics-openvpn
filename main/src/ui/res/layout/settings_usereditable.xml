@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright (c) 2012-2016 Arne Schwabe
+  ~ Distributed under the GNU GPL v2 with additional terms. For full terms see the file doc/LICENSE.txt
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:blinkt="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/stdpadding">
+
+    <TextView
+        android:id="@+id/messageUserEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        tools:text="@string/message_no_user_edit" />
+
+    <LinearLayout
+        android:id="@+id/unchangeable_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="gone">
+
+        <TextView
+            android:id="@+id/type_title"
+            style="@style/item"
+            android:text="@string/vpn_type"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <Spinner
+            android:id="@+id/type"
+            style="@style/item"
+            android:entries="@array/vpn_types"
+            android:prompt="@string/vpn_type" />
+
+        <LinearLayout
+            android:id="@+id/keystore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="gone">
+
+            <include layout="@layout/keystore_selector" />
+
+            <TextView
+                style="@style/item"
+                android:singleLine="false"
+                android:text="@string/extracahint"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pkcs12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <de.blinkt.openvpn.views.FileSelectLayout
+                android:id="@+id/pkcs12select"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                blinkt:certificate="false"
+                blinkt:fileTitle="@string/client_certificate_title" />
+
+            <TextView
+                style="@style/item"
+                android:layout_marginLeft="8dip"
+                android:layout_marginRight="8dip"
+                android:text="@string/pkcs12pwquery"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <EditText
+                android:id="@+id/pkcs12password"
+                style="@style/item"
+                android:layout_marginLeft="8dip"
+                android:layout_marginRight="8dip"
+                android:hint="@string/pw_query_hint"
+                android:inputType="textPassword" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/cacert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible"
+            tools:visibility="visible">
+
+            <de.blinkt.openvpn.views.FileSelectLayout
+                android:id="@+id/caselect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                blinkt:fileTitle="@string/ca_title"
+                blinkt:showClear="true" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

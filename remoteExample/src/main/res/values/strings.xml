@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="app_name">OpenVPN第三方集成</string>
+    <string name="vpn_list">VPN配置列表</string>
+    <string name="action_settings">设置</string>
+    <string name="permission_description">允许第三方APP控制OpenVPN</string>
+    <string name="no_status_yet">未知</string>
+    <string name="aidl_connect">AIDL启动第一个VPN</string>
+    <string name="intent_connect">INTENT启动第一个VPN</string>
+    <string name="start_embedded_aidl">AIDL启动内嵌VPN</string>
+    <string name="start_embedded_intent">INTENT启动内嵌VPN</string>
+    <string name="disconnect">断开VPN</string>
+</resources>

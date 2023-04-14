@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright (c) 2012-2016 Arne Schwabe
+  ~ Distributed under the GNU GPL v2 with additional terms. For full terms see the file doc/LICENSE.txt
+  -->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="@string/tls_settings"
+        app:iconSpaceReserved="false" >
+        <CheckBoxPreference
+            android:key="remoteServerTLS"
+            android:persistent="false"
+            android:summary="@string/check_remote_tlscert"
+            android:title="@string/check_remote_tlscert_title"
+            app:iconSpaceReserved="false" />
+        <CheckBoxPreference
+            android:key="checkRemoteCN"
+            android:persistent="false"
+            android:summary="@string/remote_tlscn_check_summary"
+            android:title="@string/remote_tlscn_check_title"
+            app:iconSpaceReserved="false" />
+
+        <de.blinkt.openvpn.views.RemoteCNPreference
+            android:dependency="checkRemoteCN"
+            android:key="remotecn"
+            android:persistent="false"
+            android:title="@string/enter_tlscn_title"
+            android:positiveButtonText="@android:string/ok"
+            android:negativeButtonText="@string/cancel"
+            app:iconSpaceReserved="false" />
+
+        <EditTextPreference
+            android:dependency="checkRemoteCN"
+            android:dialogMessage="@string/username_field_title"
+            android:key="remotex509name"
+            android:persistent="false"
+            android:title="@string/username_field"
+            app:iconSpaceReserved="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/tls_authentication"
+        app:iconSpaceReserved="false" >
+        <SwitchPreference
+            android:key="useTLSAuth"
+            android:persistent="false"
+            android:summary="@string/tls_key_auth"
+            android:title="@string/use_tls_auth"
+            app:iconSpaceReserved="false" />
+
+        <Preference
+            android:dependency="useTLSAuth"
+            android:key="tlsAuthFile"
+            android:persistent="false"
+            android:title="@string/tls_auth_file"
+            app:iconSpaceReserved="false" />
+
+        <ListPreference
+            android:dependency="useTLSAuth"
+            android:entries="@array/tls_directions_entries"
+            android:entryValues="@array/tls_directions_values"
+            android:key="tls_direction"
+            android:persistent="false"
+            android:title="@string/tls_direction"
+            app:iconSpaceReserved="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/encryption"
+        app:iconSpaceReserved="false" >
+        <ListPreference
+            android:entries="@array/cipher_entries"
+            android:entryValues="@array/cipher_values"
+            android:key="cipher"
+            android:persistent="false"
+            android:title="@string/packet_cipher"
+            app:iconSpaceReserved="false" />
+
+        <ListPreference
+            android:entries="@array/auth_entries"
+            android:entryValues="@array/auth_values"
+            android:key="auth"
+            android:persistent="false"
+            android:title="@string/packet_auth"
+            app:iconSpaceReserved="false" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
